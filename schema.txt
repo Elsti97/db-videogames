@@ -1,0 +1,67 @@
+Videogioco:
+-ID: Int (PK)
+-Nome: Varchar(50)
+-Trama: Text
+-Data uscita: Date
+-ID_sofware_house: Int (FK)
+
+Software_house:
+-ID: Int (PK)
+-Nome: Varchar(50)
+-Partita Iva: Varchar(20)
+-Città: Varchar(100)
+-Nazione: Varchar(50)
+
+Piattaforma:
+-ID: Int (PK)
+-Nome: Varchar(50)
+
+PIVOT Piattaforma/videogioco:
+ID_videogioco: Int
+ID_piattaforma: Int
+
+Categoria:
+-ID: Int (PK)
+-Nome: Varchar(50)
+
+PIVOT Categoria/videogioco:
+ID_videogioco: Int
+ID_categoria: Int
+
+Classificazione:
+-ID: Int (PK)
+-Nome: Varchar(50)
+
+PIVOT Classificazione/videogioco:
+ID_videogioco: Int
+ID_classificazione: Int
+
+Torneo:
+-ID: Int (PK)
+-Nome: Varchar(50)
+-Anno: SmallInt
+-Città: Varchar(100)
+-ID_videogioco: Int (FK)
+
+PIVOT Giocatore/torneo:
+ID_torneo: Int
+ID_giocatore: Int
+
+Giocatore:
+-ID: Int (PK)
+-Nome: Varchar(50)
+-Cognome: Varchar(50)
+Nickname: Varchar(50)
+
+Recensione:
+-ID: Int (PK)
+-Titolo: Varchar(100)
+-Testo: Text
+-Voto: TinyInt
+-ID_giocatore: Int (FK)
+-ID_videogioco: Int (FK)
+
+Premio:
+-ID: Int (PK)
+-Nome: Varchar(100)
+-ID_videogioco: Int (FK)
